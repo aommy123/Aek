@@ -1,0 +1,59 @@
+body {
+    background-color :rgb(211, 230, 88)
+}
+
+body {
+    padding:  10px;
+    background-image: url(Anime-Background-Gif-Aesthetic-City-Elkgrovesescom.gif);
+    background-size: 100%;
+
+}
+
+header {
+    width: 250px;
+    padding: 10px;
+    border: 5px solid rgb(0, 0, 0);
+    margin: 10px;
+
+}
+
+.pushable {
+    background: rgba(230, 219, 10, 0.67);
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: rgb(231, 225, 46);
+    color: rgb(0, 0, 0);
+    transform: translateY(-6px);
+  }
+  
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+
+  table, td {
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50px; 
+    border-spacing: 10px;}
+  
+    body {
+      background-color: #c4c4c4;
+    
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  
+  img {
+    height: 50px;
+    transform: translateY(10px);
+  }

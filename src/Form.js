@@ -1,125 +1,176 @@
-import React,{ Component } from 'react'
+import React, { Component } from "react";
 
-class Form extends Component{
-constructor(props){
-	super(props)
-	this.state = { email:'',password:'',name:'',lastname:'',age:'', address:'',phoneNo:''}
-	this.handleChange = this.handleChange.bind(this)
-	this.handleSubmit = this.handleSubmit.bind(this)
-}
+class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      name: "",
+      age: "",
+      address: "",
+      phoneNo: "",
+      lastname: "",
+      Birthday: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-// Form submitting logic, prevent default page refresh
-handleSubmit(event){
-	const { email, password, name, lastname, age, address, phoneNo, } = this.state
-	event.preventDefault()
-	alert(`
-	____ข้อมูลของคุณ____\n
-	อีเมล : ${email}
-	รหัส : ${password}
-	ชื่อ : ${name}
-    นามสกุล:${lastname}
-	อายุ: ${age}
-	ที่อยู๋ : ${address}
-	เบอร์โทร : ${phoneNo}
-	`)
-}
+  handleSubmit(event) {
+    const { email, name, age, address, phoneNo, lastname, Birthday } =
+      this.state;
+    event.preventDefault();
+    alert(`
+	____Your Details____\n
+	Email : ${email}
+	Name : ${name}
+	Age : ${age}
+	Address : ${address}
+	Phone No : ${phoneNo}
+  lastname : ${lastname}
+  Birthday: ${Birthday}
+	`);
+  }
 
-handleChange(event){
-	this.setState({
-	// Computed property names
-	// keys of the objects are computed dynamically
-	[event.target.name] : event.target.value
-	})
-}
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
 
-render(){
-	return(
-	<form onSubmit={this.handleSubmit}>
-		<div>
-		<label htmlFor='email'>อีเมล</label>
-		<input
-			name='email'
-			value = {this.state.email}
-			onChange={this.handleChange}
-		/>
-		</div>
-		<div>
-		<label htmlFor='password'>รหัส</label>
-		<input
-			name='password'
-			value = {this.state.password}
-			onChange={this.handleChange}
-		/>
-		</div>
-		<div>
-		<label htmlFor='name'>ชื่อ</label>
-		<input
-			name='name'
-			value={this.state.name}
-			onChange={this.handleChange}
-		/>
-		</div>
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
         <div>
-		<label htmlFor='lastname'>นามสกลุ</label>
-		<input
-			name='lastname'
-			value={this.state.lastname}
-			onChange={this.handleChange}
-		/>
-		</div>
-		<div>
-		<label htmlFor='age'>อายุ</label>
-		<input
-			name='age'
-			value={this.state.age}
-			onChange={this.handleChange}
-		/>
-		</div>
-		<div>
-		<label htmlFor='address'>ที่อยู่</label>
-		<input
-			name='address'
-			value={this.state.address}
-			onChange={this.handleChange}
-		/>
-		</div>
-		<div>
-		<label htmlFor='phoneNo'>เบอร์โทร</label>
-		<input
-			name='phoneNo'
-			value={this.state.phoneNo}
-			onChange={this.handleChange}
-		/>
-		</div>
-        
-		<div>
-			<div>
-			<label for="favcolor">สีที่คุณชอบ:</label>
-            <input type="color" id="favcolor" name="favcolor" />
-			</div>
+          <h1>
+            <center>
+              <header>กรอกข้อมูล</header>
+            </center>
+          </h1>
+        </div>
 
-			<div>
-			<label for="birthday">วัน,เดือน,ปี,เกิดของคุณ:</label>
-            <input type="date" id="birthday" name="birthday" />
-			</div>
+        <h3>
+          <center>
+            <table>
+              <th>
+                <tr>
+                  <label htmlFor="name">ชื่อ:</label>
+                  <input
+                    name="name"
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                  />
 
-			<div>
-			<label for="appt">เวลา:</label>
-            <input type="time" id="appt" name="appt" />
-			</div>
+                  <label htmlFor="lastname">นามสกุล:</label>
+                  <input
+                    name="lastname"
+                    value={this.state.lastname}
+                    onChange={this.handleChange}
+                  />
 
-			<div>
-			<label for="quantity">Quantity (between 1 and 5):</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="5"/>
-			</div>
+                  <label for="birthday">ว,ด,ป:</label>
+                  <input type="date" id="birthday" name="birthday" />
+                </tr>
+              </th>
+            </table>
+          </center>
+        </h3>
 
-		</div>
-		<div>
-		<button>ยืนยันข้อมูล</button>
-		</div>
-	</form>
-	)
+        <div>
+          <h3>
+            <center>
+              <table>
+                <th>
+                  <tr>
+                    <label htmlFor="email">อีเมล</label>
+                    <input
+                      name="email"
+                      value={this.state.email}
+                      onChange={this.handleChange}
+                    />
+                  </tr>
+                </th>
+              </table>
+            </center>
+          </h3>
+        </div>
+
+        <div>
+          <h3>
+            <center>
+              <table>
+                <th>
+                  <tr>
+                    <label htmlFor="age">อายุ</label>
+                    <input
+                      name="age"
+                      value={this.state.age}
+                      onChange={this.handleChange}
+                    />
+                  </tr>
+                </th>
+              </table>
+            </center>
+          </h3>
+        </div>
+
+        <div>
+          <h3>
+            <center>
+              <table>
+                <th>
+                  <tr>
+                    <label htmlFor="address">ที่อยู่</label>
+                    <input
+                      name="address"
+                      value={this.state.address}
+                      onChange={this.handleChange}
+                    />
+                  </tr>
+                </th>
+              </table>
+            </center>
+          </h3>
+        </div>
+
+        <div>
+          <h3>
+            <center>
+              <table>
+                <th>
+                  <tr>
+                    <label htmlFor="phoneNo">เบอร์โทรศัพท์</label>
+                    <input
+                      name="phoneNo"
+                      value={this.state.phoneNo}
+                      onChange={this.handleChange}
+                    />
+                  </tr>
+                </th>
+              </table>
+            </center>
+          </h3>
+        </div>
+
+        <div>
+          <center>
+            <button class="pushable">
+              <span class="front">กดยืนยัน</span>
+            </button>
+          </center>
+        </div>
+
+        <div>
+          <center>
+          <a href="https://www.facebook.com/profile.php?id=100009727834772">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/900px-Facebook_Logo_%282019%29.png"></img>
+            </a>
+          </center>
+        </div>
+
+      </form>
+    );
+  }
 }
-}
 
-export default Form
+export default Form;
